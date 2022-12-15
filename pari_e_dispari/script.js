@@ -25,6 +25,12 @@ form.addEventListener('submit', function(event){
         return;
     }
 
-
+    function getRandomNumber (){
+        const randomNumber = Math.floor(Math.random() * 5) + 1;
+        return randomNumber;
+    }
+    
+    const cpuNumber = getRandomNumber()
+    // // console.log(cpuNumber);
 
 });
