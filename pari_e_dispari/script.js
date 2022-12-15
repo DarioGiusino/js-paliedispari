@@ -22,8 +22,8 @@ form.addEventListener('submit', function(event){
     // // console.log(userNumber);
 
     // validazione
-    if (isNaN(userNumber) || userNumber > 5 || userNumber < 1){
-        alert('Hai inserito un valore non valido, prova con un numero tra 1 e 5!')
+    if (isNaN(userNumber) || userNumber > 5 || userNumber < 1 || even.checked === false && odd.checked === false){
+        alert('Hai inserito un valore non valido, prova con un numero tra 1 e 5 e a selezionare pari o dispari!')
         return;
     }
 
