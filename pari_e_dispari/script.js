@@ -15,4 +15,14 @@ const result = document.getElementById('result');
 form.addEventListener('submit', function(event){
     // ! reset comportamento form
     event.preventDefault();
+
+    // recupero valore dell'input
+    const userNumber = parseInt(number.value.trim());
+
+    // validazione
+    if (isNaN(userNumber)){
+        alert('Hai inserito un valore non valido, prova con un numbero!')
+        return;
+    }
+
 });
