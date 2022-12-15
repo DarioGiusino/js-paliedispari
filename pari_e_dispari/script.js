@@ -27,6 +27,7 @@ form.addEventListener('submit', function(event){
         return;
     }
 
+    // creo funzione per generare numero random della cpu
     function getRandomNumber(){
         const randomNumber = Math.floor(Math.random() * 5) + 1;
         return randomNumber;
@@ -35,8 +36,10 @@ form.addEventListener('submit', function(event){
     const cpuNumber = getRandomNumber()
     // // console.log('numero cpu: ' + cpuNumber);
 
+    // sommo i due numeri
     const sum = userNumber + cpuNumber;
 
+    // creo funzione per stabilire se la somma è pari o dispari
     function EvenOrOdd(number){
         if (isNaN(number)){
             alert('Il valore non è corretto');
@@ -50,6 +53,7 @@ form.addEventListener('submit', function(event){
     const isEven = EvenOrOdd(sum);
     // // console.log(isEven);
 
+    // stampo su pagina
     cpuNumberElement.innerText = `Il numero della cpu è ${cpuNumber} e la somma tra i due numeri è ${sum}`
 
     if (isEven === true && even.checked === true || isEven === false && odd.checked === true){
