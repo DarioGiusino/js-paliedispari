@@ -17,6 +17,12 @@ form.addEventListener('submit', function(event){
     const userWord = text.value.trim();
     // // console.log(userWord);
 
+    // validazione
+    if (!isNaN(userWord)){
+        alert('Hai inserito un valore non valido, prova ad inserire una parola!');
+        return;
+    }
+
     /* una parola è palindroma quando letta al contrario è uguale alla parola di partenza. Quindi se giro la parola e questa esce uguale a quella di partenza allora la parola sarà palindroma. Se invece saranno diverse non lo sarà */
 
     function reverseWord(word){
