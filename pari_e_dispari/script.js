@@ -10,6 +10,7 @@ const form = document.querySelector('form');
 const even = document.getElementById('even');
 const odd = document.getElementById('odd');
 const number = document.getElementById('number');
+const cpuNumberElement = document.getElementById('cpu-number');
 const result = document.getElementById('result');
 
 form.addEventListener('submit', function(event){
@@ -48,5 +49,13 @@ form.addEventListener('submit', function(event){
 
     const isEven = EvenOrOdd(sum);
     // // console.log(isEven);
+
+    cpuNumberElement.innerText = `Il numero della cpu è ${cpuNumber} e la somma tra i due numeri è ${sum}`
+
+    if (isEven === true && even.checked === true || isEven === false && odd.checked === true){
+        result.innerText = 'Congratulazioni, hai vinto!'
+    } else {
+        result.innerText = 'Ritenta, sarai più fortunato!'
+    }
 
 });
