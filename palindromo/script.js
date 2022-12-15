@@ -13,5 +13,7 @@ form.addEventListener('submit', function(event){
     // ! reset comportamento form
     event.preventDefault();
 
-    
+    // recupero valore della parola inserita
+    const userWord = text.value.trim();
+    // // console.log(userWord);
 });
