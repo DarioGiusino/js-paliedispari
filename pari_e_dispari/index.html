@@ -5,10 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pari e Dispari</title>
+    <!-- internal stylesheet -->
+    <link rel="stylesheet" href="style.css">
     <!-- internal script -->
     <script defer src="script.js"></script>
 </head>
 <body>
-    
+    <h1>Segli pari o dispari, butta un numero e scopri se hai vinto!</h1>
+    <form>
+        <!-- radio pari -->
+        <input type="radio" id="even" name="even_odd">
+        <label for="even">Pari</label>
+        <!-- radio dispari -->
+        <input type="radio" id="odd" name="even_odd">
+        <label for="odd">Dispari</label>
+        <!-- input text -->
+        <input id="number" type="text" placeholder="Inserisci un numero da 1 a 5...">
+        <button>Scopri se hai vinto!</button>
+    </form>
+    <p id="result"></p>
 </body>
 </html>

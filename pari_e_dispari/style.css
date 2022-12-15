@@ -1,0 +1,17 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* generics */
+h1{
+    margin: 20px 0px;
+}
+
+#number{
+    display: block;
+    width: 200px;
+    margin: 10px 0px;
+}
