@@ -16,4 +16,29 @@ form.addEventListener('submit', function(event){
     // recupero valore della parola inserita
     const userWord = text.value.trim();
     // // console.log(userWord);
+
+    /* una parola è palindroma quando letta al contrario è uguale alla parola di partenza. Quindi se giro la parola e questa esce uguale a quella di partenza allora la parola sarà palindroma. Se invece saranno diverse non lo sarà */
+
+    function reverseWord(word){
+        let wordResult = '';
+
+        for (let i = word.length - 1; i >= 0; i--){
+            wordResult += word[i];
+        }
+
+        return wordResult;
+    }
+
+    const reversedWord = reverseWord(userWord);
+
+    // // console.log(reversedWord);
+
+    isPalindrome = false;
+
+    if (reversedWord === userWord){
+        isPalindrome = true;
+    }
+
+    result.innerText = isPalindrome ? 'Sì, la parola è palindroma' : 'No, la parola non è palindroma';
+
 });
