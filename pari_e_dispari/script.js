@@ -18,6 +18,7 @@ form.addEventListener('submit', function(event){
 
     // recupero valore dell'input
     const userNumber = parseInt(number.value.trim());
+    // // console.log(userNumber);
 
     // validazione
     if (isNaN(userNumber) || userNumber > 5 || userNumber < 1){
@@ -25,12 +26,27 @@ form.addEventListener('submit', function(event){
         return;
     }
 
-    function getRandomNumber (){
+    function getRandomNumber(){
         const randomNumber = Math.floor(Math.random() * 5) + 1;
         return randomNumber;
     }
-    
+
     const cpuNumber = getRandomNumber()
-    // // console.log(cpuNumber);
+    // // console.log('numero cpu: ' + cpuNumber);
+
+    const sum = userNumber + cpuNumber;
+
+    function EvenOrOdd(number){
+        if (isNaN(number)){
+            alert('Il valore non è corretto');
+            return;
+        }
+
+        let result = number % 2 === 0 ? true : false;
+        return result;
+    }
+
+    const isEven = EvenOrOdd(sum);
+    // // console.log(isEven);
 
 });
