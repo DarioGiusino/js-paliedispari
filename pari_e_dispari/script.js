@@ -20,9 +20,11 @@ form.addEventListener('submit', function(event){
     const userNumber = parseInt(number.value.trim());
 
     // validazione
-    if (isNaN(userNumber)){
-        alert('Hai inserito un valore non valido, prova con un numbero!')
+    if (isNaN(userNumber) || userNumber > 5 || userNumber < 1){
+        alert('Hai inserito un valore non valido, prova con un numero tra 1 e 5!')
         return;
     }
+
+
 
 });
