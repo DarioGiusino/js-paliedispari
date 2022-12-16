@@ -2,6 +2,18 @@
 Chiedere all’utente di inserire una parola tramiite un form
 Creare una funzione per capire se la parola inserita è palindroma */
 
+// ? funzioni
+// giro la parola
+function reverseWord(word){
+    let wordResult = '';
+
+    for (let i = word.length - 1; i >= 0; i--){
+        wordResult += word[i];
+    }
+
+    return wordResult;
+}
+
 // recupero elementi dal dom
 const form = document.querySelector('form');
 const text = document.getElementById('text');
@@ -25,26 +37,18 @@ form.addEventListener('submit', function(event){
 
     /* una parola è palindroma quando letta al contrario è uguale alla parola di partenza. Quindi se giro la parola e questa esce uguale a quella di partenza allora la parola sarà palindroma. Se invece saranno diverse non lo sarà */
 
-    function reverseWord(word){
-        let wordResult = '';
-
-        for (let i = word.length - 1; i >= 0; i--){
-            wordResult += word[i];
-        }
-
-        return wordResult;
-    }
-
+    // constante della parola girata al contrario
     const reversedWord = reverseWord(userWord);
-
     // // console.log(reversedWord);
-
-    isPalindrome = false;
+    
+    // verifico se palindroma
+    let isPalindrome = false;
 
     if (reversedWord === userWord){
         isPalindrome = true;
     }
 
+    // stampo su pagina
     result.innerText = isPalindrome ? 'Sì, la parola è palindroma' : 'No, la parola non è palindroma';
 
 });
