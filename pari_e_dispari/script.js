@@ -5,6 +5,17 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto. */
 
+// ? funzioni
+// creo funzione per generare numero random della cpu
+function getRandomNumber(min, max){
+    return Math.floor(Math.random() * (max + 1 - min)) + min;
+}
+
+// creo funzione per stabilire se la somma è pari o dispari
+function EvenOrOdd(number){
+    return number % 2 === 0;
+}
+
 // recupero elementi dal dom
 const form = document.querySelector('form');
 const even = document.getElementById('even');
@@ -22,44 +33,26 @@ form.addEventListener('submit', function(event){
     // // console.log(userNumber);
 
     // validazione
-    if (isNaN(userNumber) || userNumber > 5 || userNumber < 1 || even.checked === false && odd.checked === false){
+    if (isNaN(userNumber) || userNumber > 5 || userNumber < 1 || !even.checked && !odd.checked){
         alert('Hai inserito un valore non valido, prova con un numero tra 1 e 5 e a selezionare pari o dispari!')
         return;
     }
-
-    // creo funzione per generare numero random della cpu
-    function getRandomNumber(){
-        const randomNumber = Math.floor(Math.random() * 5) + 1;
-        return randomNumber;
-    }
-
-    const cpuNumber = getRandomNumber()
+    
+    // numero random per CPU
+    const cpuNumber = getRandomNumber(1, 5)
     // // console.log('numero cpu: ' + cpuNumber);
 
     // sommo i due numeri
     const sum = userNumber + cpuNumber;
 
-    // creo funzione per stabilire se la somma è pari o dispari
-    function EvenOrOdd(number){
-        if (isNaN(number)){
-            alert('Il valore non è corretto');
-            return;
-        }
-
-        let result = number % 2 === 0 ? true : false;
-        return result;
-    }
-
+    // dichiaro se pari o dispari
     const isEven = EvenOrOdd(sum);
     // // console.log(isEven);
 
     // stampo su pagina
     cpuNumberElement.innerText = `Il numero della cpu è ${cpuNumber} e la somma tra i due numeri è ${sum}`
 
-    if (isEven === true && even.checked === true || isEven === false && odd.checked === true){
-        result.innerText = 'Congratulazioni, hai vinto!'
-    } else {
-        result.innerText = 'Ritenta, sarai più fortunato!'
-    }
+    const message = isEven && even.checked || !isEven && odd.checked ? 'Congratulazioni, hai vinto!' : 'Ritenta, sarai più fortunato!';
 
+    result.innerText = message;
 });
